@@ -1,0 +1,32 @@
+// Responsive Web Design Practice
+// Updated: 30/07/2013
+
+// Extends Sass Partial
+
+// Nicolas Gallagher's micro clearfix
+.group {
+	// Needed for IE 7 support
+	zoom: 1;
+
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+// Sets display to inline-block and adds support for IE 7
+@mixin inline-block {
+	& {
+		display: inline-block;
+		vertical-align: top;
+
+		.lt-ie8 & {
+			display: inline;
+			zoom: 1;
+		}
+	}
+}

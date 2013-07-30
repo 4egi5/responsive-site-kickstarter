@@ -1,0 +1,14 @@
+// Responsive Web Design Practice
+// Updated: 4/07/2013
+
+// Functions Sass Partial
+
+// Pixel to em function
+@function em($pixel-size: $base-size, $parent-size: $base-size) {
+	@return $pixel-size / $parent-size + em;
+}
+
+// Pixel to percent function
+@function pct($pixel-size: $base-size, $parent-size: $base-size) {
+	@return percentage($pixel-size / $parent-size);
+}

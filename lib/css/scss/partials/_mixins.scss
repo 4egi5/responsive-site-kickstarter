@@ -1,0 +1,70 @@
+// Responsive Web Design Practice
+// Updated: 30/07/2013
+
+// Mixins Sass Partial
+
+// Recommended to keep prefixes in the mixin partial for easy maintenance
+
+// Proper specification for viewport, also fixes snap mode bug in IE 10
+@mixin viewport($option-width: device-width) {
+	@-ms-viewport {
+		width: $option-width;
+	}
+
+	@-o-viewport {
+		width: $option-width;
+	}
+
+	@viewport {
+		width: $option-width;
+	}
+}
+
+// Old box model - padding is included in width (not supported in IE 7-)
+@mixin box-sizing($option-box: border-box) {
+	* {
+		-webkit-box-sizing: $option-box;
+		-moz-box-sizing: $option-box;
+		box-sizing: $option-box;
+	}
+}
+
+// Adds bold font-weight for modern browsers and inserts fallback font-family for IE8- to enable bold
+@mixin font-weight-bold {
+	font-family: $font-bold-fallback, $font-sans;
+	font-weight: bold;
+}
+
+// Calculates font-size in rem and supplies a fallback for old browsers (IE 8-)
+@mixin font-size($pixel-size: $base-size, $parent-size: $base-size) {
+	// Pixel font size ÷ body font size
+	font-size: $pixel-size / $base-size + rem;
+
+	.lt-ie9 & {
+		// Pixel font size ÷ parent font size
+		font-size: $pixel-size / $parent-size + em;
+	}
+}
+
+// Adds em padding for element and for JavaScript inserted child wrapper in IE 7
+@mixin padding($y-padding-size: $base-size, $x-padding-size: $base-size, $parent-font-size: $base-size) {
+	&,
+	.lt-ie8 & .ie7-div-wrapper {
+		// Statement detects if y padding or x padding is 0 or 0px and makes sure a unitless number is used
+		@if $y-padding-size == 0 or 0px {
+			padding: 0 $x-padding-size / $parent-font-size + em;
+		} @else if $x-padding-size != 0 or 0px {
+			padding: $y-padding-size / $parent-font-size + em 0;
+		} @else {
+			// Top / bottom padding size ÷ parent font size & Left / right padding size ÷ parent font size
+			padding: $y-padding-size / $parent-font-size + em $x-padding-size / $parent-font-size + em;
+		}
+	}
+}
+
+// Apply removes artifacts from images in IE 7 (not sure about performance issues if overused)
+@mixin ie7-interpolation-bicubic {
+	.lt-ie8 & {
+		-ms-interpolation-mode: bicubic;
+	}
+}

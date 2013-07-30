@@ -1,0 +1,33 @@
+// Responsive Web Design Practice
+// Updated: 5/07/2013
+
+// Basic Sass Partial
+
+// Needed in IE 10 & Opera for proper viewport resizing
+@include viewport;
+
+// Enables old school box model for modern browsers, minus IE 7
+@include box-sizing;
+
+// Serve up correct eot fonts from Font Squirrel for IE 8-
+@font-face {
+	// Give the font-family property the custom font name so in IE 8- it replaces normal text as intended
+	font-family: nth($font-sans, 1);
+	src: url("../eot/OpenSans-Regular-webfont.eot");
+}
+
+@font-face {
+	// Needs to be unique in order to work in IE 8-
+	font-family: $font-bold-fallback;
+	src: url("../eot/OpenSans-Bold-webfont.eot");
+}
+
+// Needed to remove padding in IE 7 in preparation for JavaScript inserted .ie7-div-wrapper class
+.lt-ie8 .ie7-box-model {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+body {
+	background: $background-color;
+}

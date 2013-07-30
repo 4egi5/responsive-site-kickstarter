@@ -1,2 +1,3 @@
-responsivewebdesignkickstarter
-==============================
+Responsive Web Design Kickstarter
+=================================
+More to come later...

@@ -1,0 +1,5 @@
+# Sass and Grunt generated files #
+##################################
+.sass-cache
+lib/css/responsivewebdesignkickstarter.css
+node_modules

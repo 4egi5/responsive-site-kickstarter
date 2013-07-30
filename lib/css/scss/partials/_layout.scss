@@ -1,0 +1,47 @@
+// Responsive Web Design Practice
+// Updated: 30/07/2013
+
+// Layout Sass Partial
+
+// Makes sure site doesn't scroll horizontally and images resize without escaping their containers
+body,
+img {
+	max-width: 100%;
+}
+
+// Width is a guesstimate and not based on grid width
+.site-wrapper {
+	margin: 0 auto;
+	width: 90%;
+}
+
+.author,
+.content,
+.sidebar {
+	@include inline-block;
+}
+
+.author {
+	margin-bottom: em(20px, 16px);
+	width: 30%;
+}
+
+@media screen and (min-width: 700px) {
+
+	.author,
+	.sidebar {
+		width: pct(124px, 988px);
+	}
+
+	.sidebar {
+		.lt-ie8 & {
+			width: pct(123px, 988px);
+		}
+	}
+
+	.content {
+		width: pct(740px, 988px);
+
+		@include padding(0, 20px, 16px);
+	}
+}
