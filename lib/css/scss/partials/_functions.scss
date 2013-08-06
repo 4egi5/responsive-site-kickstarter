@@ -1,14 +1,34 @@
-// Responsive Web Design Practice
-// Updated: 4/07/2013
+// Project: Responsive Site Kickstarter
+// Updated: 6-08-2013
 
-// Functions Sass Partial
+//==========================================================
+//	Functions Sass Partial
+//==========================================================
 
-// Pixel to em function
-@function em($pixel-size: $base-size, $parent-size: $base-size) {
-	@return $pixel-size / $parent-size + em;
+// Put math calculations here so they can keep code brief or be easily changed in the future
+
+// Contents:
+//	Pixel to EM
+//	Pixel to percentage
+
+
+
+//	Pixel to EM
+//==========================================================
+
+// Use after declaring a CSS property
+
+@function em($pixel-size: $base-font-size, $parent-font-size: $base-font-size) {
+	@return $pixel-size / $parent-font-size + em;
 }
 
-// Pixel to percent function
-@function pct($pixel-size: $base-size, $parent-size: $base-size) {
-	@return percentage($pixel-size / $parent-size);
+
+
+//	Pixel to percentage
+//==========================================================
+
+// The native Sass percentage function, wrapped inside a function here for consistency with other functions and future maintainability
+
+@function pct($pixel-size: $base-font-size, $parent-font-size: $base-font-size) {
+	@return percentage($pixel-size / $parent-font-size);
 }

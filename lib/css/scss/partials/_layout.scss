@@ -1,30 +1,40 @@
-// Responsive Web Design Practice
-// Updated: 30/07/2013
+// Project: Responsive Site Kickstarter
+// Updated: 6-08-2013
 
-// Layout Sass Partial
+//==========================================================
+//	Layout Sass Partial
+//==========================================================
 
-// Makes sure site doesn't scroll horizontally and images resize without escaping their containers
-body,
-img {
-	max-width: 100%;
-}
+// All styles pertaining to the grid
 
-// Width is a guesstimate and not based on grid width
+// Contents:
+//	Mobile breakpoint
+//	Desktop breakpoint
+
+
+//	$Mobile breakpoint
+//==========================================================
+
 .site-wrapper {
 	margin: 0 auto;
-	width: 90%;
+	width: 90%;	// Width is a guesstimate
 }
 
 .author,
 .content,
 .sidebar {
-	@include inline-block;
+	@extend .inline-block;
 }
 
 .author {
 	margin-bottom: em(20px, 16px);
-	width: 30%;
+	width: 30%;	// Width was decided in browser
 }
+
+
+
+//	$Desktop breakpoint
+//==========================================================
 
 @media screen and (min-width: 700px) {
 
@@ -33,10 +43,8 @@ img {
 		width: pct(124px, 988px);
 	}
 
-	.sidebar {
-		.lt-ie8 & {
-			width: pct(123px, 988px);
-		}
+	.lt-ie8 .sidebar {	// Correction for layout breaking issue (delete if IE 7 is not required)
+		width: pct(123px, 988px);
 	}
 
 	.content {
