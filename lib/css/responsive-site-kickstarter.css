@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
 html {
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
@@ -229,11 +229,11 @@ th {
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../lib/eot/OpenSans-Regular-webfont.eot"); }
+  src: url("../eot/OpenSans-Regular-webfont.eot"); }
 
 @font-face {
   font-family: OpenSansBold;
-  src: url("../lib/eot/OpenSans-Bold-webfont.eot"); }
+  src: url("../eot/OpenSans-Bold-webfont.eot"); }
 
 body,
 img {

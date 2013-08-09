@@ -1,5 +1,5 @@
 // Project: Responsive Site Kickstarter
-// Updated: 6-08-2013
+// Updated: 10-08-2013
 
 //==========================================================
 //	Basic Sass Partial
@@ -38,25 +38,25 @@
 //	$Custom font import
 //==========================================================
 
-// Imports a custom font using the Google Fonts service, importing also saves a HTTP request [http://www.google.com/fonts/specimen/Open+Sans]
+// Imports custom font rules using the Google Fonts service and saves some HTTP requests (embedding would create more because it would have every browsers font files in the src properties) [http://www.google.com/fonts/specimen/Open+Sans]
 
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700");
 
 
 
 //	$IE custom font
 //==========================================================
 
-// Google Fonts don't work in IE 8-, so use Font Squirrel to search for the font’s IE EOT version and place it in the src path [http://www.fontsquirrel.com/fonts/open-sans]
+// Google Fonts don't support IE 8-, thankfully their font library is open source and IE compatible EOT versions can be found at Font Squirrel [http://www.fontsquirrel.com/fonts/open-sans]
 
 @font-face {
-	font-family: nth($font-family, 1);	// Variable is the custom font’s name so in IE 8- it replaces normal text as intended
-	src: url("../lib/eot/OpenSans-Regular-webfont.eot");
+	font-family: nth($font-family, 1);	// Outputs the first value in the variable
+	src: url("../eot/OpenSans-Regular-webfont.eot");
 }
 
 @font-face {
 	font-family: $font-bold-fallback;
-	src: url("../lib/eot/OpenSans-Bold-webfont.eot");
+	src: url("../eot/OpenSans-Bold-webfont.eot");
 }
 
 

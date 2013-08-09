@@ -1,5 +1,5 @@
 // Project: Responsive Site Kickstarter
-// Updated: 6-08-2013
+// Updated: 10-08-2013
 
 //==========================================================
 //	Mixins Sass Partial
@@ -55,10 +55,10 @@
 //	$Fallback bold
 //==========================================================
 
-// Adds bold font-weight for modern browsers and inserts a fallback font for IE 8- to enable bold
+// Adds bold font-weight for modern browsers and inserts a fallback font-family value for IE 8-
 
 @mixin font-weight-bold {
-	font-family: $font-bold-fallback, $font-family;
+	font-family: $font-bold-fallback, $font-family;	// Replaces the first value (Font Squirrel custom font), with the bold version to avoid IE 8- problems
 	font-weight: bold;
 }
 
